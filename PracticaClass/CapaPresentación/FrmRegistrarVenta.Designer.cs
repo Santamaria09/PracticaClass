@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblPago = new System.Windows.Forms.Label();
             this.cboPago = new System.Windows.Forms.ComboBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblPago = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.cboCliente = new System.Windows.Forms.ComboBox();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnAgregarP = new System.Windows.Forms.Button();
-            this.dvgProductosB = new System.Windows.Forms.DataGridView();
             this.txtBProducto = new System.Windows.Forms.TextBox();
-            this.dvgDetalle = new System.Windows.Forms.DataGridView();
-            this.btnQuitar = new System.Windows.Forms.Button();
+            this.dvgProductosB = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnLimpiarD = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnQuitar = new System.Windows.Forms.Button();
+            this.dvgDetalle = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgProductosB)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgDetalle)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,85 +73,14 @@
             this.panel1.Size = new System.Drawing.Size(1017, 100);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // cboPago
             // 
-            this.panel2.Controls.Add(this.btnAgregarP);
-            this.panel2.Controls.Add(this.txtBProducto);
-            this.panel2.Controls.Add(this.dvgProductosB);
-            this.panel2.Controls.Add(this.btnBuscar);
-            this.panel2.Controls.Add(this.lblBuscar);
-            this.panel2.Location = new System.Drawing.Point(0, 106);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(509, 305);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnLimpiarD);
-            this.panel3.Controls.Add(this.btnQuitar);
-            this.panel3.Controls.Add(this.dvgDetalle);
-            this.panel3.Location = new System.Drawing.Point(515, 106);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(502, 305);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lblTotal);
-            this.panel4.Controls.Add(this.btnCancelar);
-            this.panel4.Controls.Add(this.btnRegistrar);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 417);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1017, 100);
-            this.panel4.TabIndex = 3;
-            // 
-            // lblCliente
-            // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(31, 43);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(58, 21);
-            this.lblCliente.TabIndex = 0;
-            this.lblCliente.Text = "Cliente";
-            // 
-            // cboCliente
-            // 
-            this.cboCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(95, 40);
-            this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(198, 29);
-            this.cboCliente.TabIndex = 1;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(299, 35);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(91, 36);
-            this.btnNuevo.TabIndex = 2;
-            this.btnNuevo.Text = "Filtrar";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha.Location = new System.Drawing.Point(789, 40);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 29);
-            this.dtpFecha.TabIndex = 3;
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(730, 43);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(53, 21);
-            this.lblFecha.TabIndex = 4;
-            this.lblFecha.Text = "Fecha:";
+            this.cboPago.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPago.FormattingEnabled = true;
+            this.cboPago.Location = new System.Drawing.Point(527, 40);
+            this.cboPago.Name = "cboPago";
+            this.cboPago.Size = new System.Drawing.Size(157, 29);
+            this.cboPago.TabIndex = 6;
             // 
             // lblPago
             // 
@@ -164,35 +93,64 @@
             this.lblPago.Text = "Tipo Pago";
             this.lblPago.Click += new System.EventHandler(this.lblPago_Click);
             // 
-            // cboPago
+            // lblFecha
             // 
-            this.cboPago.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPago.FormattingEnabled = true;
-            this.cboPago.Location = new System.Drawing.Point(527, 40);
-            this.cboPago.Name = "cboPago";
-            this.cboPago.Size = new System.Drawing.Size(157, 29);
-            this.cboPago.TabIndex = 6;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(730, 43);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(53, 21);
+            this.lblFecha.TabIndex = 4;
+            this.lblFecha.Text = "Fecha:";
             // 
-            // lblBuscar
+            // dtpFecha
             // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(31, 35);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(123, 21);
-            this.lblBuscar.TabIndex = 7;
-            this.lblBuscar.Text = "Buscar Producto";
+            this.dtpFecha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha.Location = new System.Drawing.Point(789, 40);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 29);
+            this.dtpFecha.TabIndex = 3;
             // 
-            // btnBuscar
+            // btnNuevo
             // 
-            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(374, 32);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(91, 36);
-            this.btnBuscar.TabIndex = 7;
-            this.btnBuscar.Text = "Filtrar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.btnNuevo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(299, 35);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(91, 36);
+            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.Text = "Filtrar";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            // 
+            // cboCliente
+            // 
+            this.cboCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCliente.FormattingEnabled = true;
+            this.cboCliente.Location = new System.Drawing.Point(95, 40);
+            this.cboCliente.Name = "cboCliente";
+            this.cboCliente.Size = new System.Drawing.Size(198, 29);
+            this.cboCliente.TabIndex = 1;
+            // 
+            // lblCliente
+            // 
+            this.lblCliente.AutoSize = true;
+            this.lblCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(31, 43);
+            this.lblCliente.Name = "lblCliente";
+            this.lblCliente.Size = new System.Drawing.Size(58, 21);
+            this.lblCliente.TabIndex = 0;
+            this.lblCliente.Text = "Cliente";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnAgregarP);
+            this.panel2.Controls.Add(this.txtBProducto);
+            this.panel2.Controls.Add(this.dvgProductosB);
+            this.panel2.Controls.Add(this.btnBuscar);
+            this.panel2.Controls.Add(this.lblBuscar);
+            this.panel2.Location = new System.Drawing.Point(0, 106);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(509, 305);
+            this.panel2.TabIndex = 1;
             // 
             // btnAgregarP
             // 
@@ -205,16 +163,6 @@
             this.btnAgregarP.UseVisualStyleBackColor = true;
             this.btnAgregarP.Click += new System.EventHandler(this.btnAgregarP_Click);
             // 
-            // dvgProductosB
-            // 
-            this.dvgProductosB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgProductosB.Location = new System.Drawing.Point(35, 83);
-            this.dvgProductosB.Name = "dvgProductosB";
-            this.dvgProductosB.ReadOnly = true;
-            this.dvgProductosB.Size = new System.Drawing.Size(430, 150);
-            this.dvgProductosB.TabIndex = 9;
-            this.dvgProductosB.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgProductosB_CellDoubleClick);
-            // 
             // txtBProducto
             // 
             this.txtBProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,16 +173,57 @@
             this.txtBProducto.TextChanged += new System.EventHandler(this.txtBProducto_TextChanged);
             this.txtBProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBProducto_KeyDown);
             // 
-            // dvgDetalle
+            // dvgProductosB
             // 
-            this.dvgDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgDetalle.Location = new System.Drawing.Point(73, 45);
-            this.dvgDetalle.Name = "dvgDetalle";
-            this.dvgDetalle.ReadOnly = true;
-            this.dvgDetalle.Size = new System.Drawing.Size(373, 174);
-            this.dvgDetalle.TabIndex = 11;
-            this.dvgDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDetalle_CellContentClick);
-            this.dvgDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDetalle_CellEndEdit);
+            this.dvgProductosB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgProductosB.Location = new System.Drawing.Point(35, 83);
+            this.dvgProductosB.Name = "dvgProductosB";
+            this.dvgProductosB.ReadOnly = true;
+            this.dvgProductosB.Size = new System.Drawing.Size(430, 150);
+            this.dvgProductosB.TabIndex = 9;
+            this.dvgProductosB.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgProductosB_CellDoubleClick);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(374, 32);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(91, 36);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Filtrar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(31, 35);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(123, 21);
+            this.lblBuscar.TabIndex = 7;
+            this.lblBuscar.Text = "Buscar Producto";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnLimpiarD);
+            this.panel3.Controls.Add(this.btnQuitar);
+            this.panel3.Controls.Add(this.dvgDetalle);
+            this.panel3.Location = new System.Drawing.Point(515, 106);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(502, 305);
+            this.panel3.TabIndex = 2;
+            // 
+            // btnLimpiarD
+            // 
+            this.btnLimpiarD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarD.Location = new System.Drawing.Point(290, 251);
+            this.btnLimpiarD.Name = "btnLimpiarD";
+            this.btnLimpiarD.Size = new System.Drawing.Size(125, 36);
+            this.btnLimpiarD.TabIndex = 12;
+            this.btnLimpiarD.Text = "Limpiar Campo";
+            this.btnLimpiarD.UseVisualStyleBackColor = true;
+            this.btnLimpiarD.Click += new System.EventHandler(this.btnLimpiarD_Click);
             // 
             // btnQuitar
             // 
@@ -247,15 +236,49 @@
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
-            // btnLimpiarD
+            // dvgDetalle
             // 
-            this.btnLimpiarD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiarD.Location = new System.Drawing.Point(290, 251);
-            this.btnLimpiarD.Name = "btnLimpiarD";
-            this.btnLimpiarD.Size = new System.Drawing.Size(125, 36);
-            this.btnLimpiarD.TabIndex = 12;
-            this.btnLimpiarD.Text = "Limpiar Campo";
-            this.btnLimpiarD.UseVisualStyleBackColor = true;
+            this.dvgDetalle.AllowUserToAddRows = false;
+            this.dvgDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgDetalle.Location = new System.Drawing.Point(73, 45);
+            this.dvgDetalle.Name = "dvgDetalle";
+            this.dvgDetalle.ReadOnly = true;
+            this.dvgDetalle.Size = new System.Drawing.Size(373, 174);
+            this.dvgDetalle.TabIndex = 11;
+            this.dvgDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDetalle_CellContentClick);
+            this.dvgDetalle.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgDetalle_CellEndEdit);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblTotal);
+            this.panel4.Controls.Add(this.btnCancelar);
+            this.panel4.Controls.Add(this.btnRegistrar);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 417);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1017, 100);
+            this.panel4.TabIndex = 3;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(74, 40);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(92, 21);
+            this.lblTotal.TabIndex = 14;
+            this.lblTotal.Text = "Monto Total";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(771, 32);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(141, 36);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnRegistrar
             // 
@@ -267,26 +290,6 @@
             this.btnRegistrar.Text = "Registrar Venta";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(771, 32);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(141, 36);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(74, 40);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(92, 21);
-            this.lblTotal.TabIndex = 14;
-            this.lblTotal.Text = "Monto Total";
             // 
             // FrmRegistrarVenta
             // 
@@ -304,11 +307,11 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProductosB)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgDetalle)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgProductosB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }

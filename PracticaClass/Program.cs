@@ -17,7 +17,7 @@ namespace PracticaClass
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmClienteBase());
+            Application.Run(new FrmLogin());
         }
     }
 }

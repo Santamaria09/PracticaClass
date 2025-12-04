@@ -131,7 +131,8 @@ namespace PracticaClass.CapaDatos
                         while (dr.Read())
                         {
                             Lista.Add(new Cliente
-                            { Id = Convert.ToInt32(dr["ID"]),
+                            { 
+                                Id = Convert.ToInt32(dr["ID"]),
                                 Nombre = dr["Nombre"].ToString(),
                                 DUI = dr["DUI"].ToString(),
                                 Telefono = dr["Telefono"].ToString(),

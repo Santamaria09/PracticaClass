@@ -51,6 +51,7 @@
     <Compile Include="CapaDatos\Conexion.cs" />
     <Compile Include="CapaDatos\ProductoDAL.cs" />
     <Compile Include="CapaDatos\TipoDePagoDAL.cs" />
+    <Compile Include="CapaDatos\UsuarioDAL.cs" />
     <Compile Include="CapaEntidades\Categoria.cs" />
     <Compile Include="CapaEntidades\Cliente.cs" />
     <Compile Include="CapaEntidades\Clientes.cs" />
@@ -58,18 +59,28 @@
     <Compile Include="CapaEntidades\Producto.cs" />
     <Compile Include="CapaEntidades\ProductosB.cs" />
     <Compile Include="CapaEntidades\RespuestaOperacion.cs" />
+    <Compile Include="CapaEntidades\Seguridad.cs" />
+    <Compile Include="CapaEntidades\SesionActual.cs" />
     <Compile Include="CapaEntidades\TiposDePago.cs" />
+    <Compile Include="CapaEntidades\Usuario.cs" />
     <Compile Include="CapaEntidades\Validaciones.cs" />
     <Compile Include="CapaEntidades\Venta.cs" />
     <Compile Include="CapaNegocio\CategoriaBLL.cs" />
     <Compile Include="CapaNegocio\ClienteBLL.cs" />
+    <Compile Include="CapaNegocio\UsuarioBLL.cs" />
     <Compile Include="CapaNegocio\VentaBLL.cs" />
-    <Compile Include="CapaNegocio\VentaDAL.cs" />
+    <Compile Include="CapaDatos\VentaDAL.cs" />
     <Compile Include="CapaPresentación\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CapaPresentación\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentación\FrmCambiarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentación\FrmCambiarClave.Designer.cs">
+      <DependentUpon>FrmCambiarClave.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaPresentación\FrmCategoria.cs">
       <SubType>Form</SubType>
@@ -95,11 +106,23 @@
     <Compile Include="CapaPresentación\FrmClienteBase.Designer.cs">
       <DependentUpon>FrmClienteBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaPresentación\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentación\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="CapaPresentación\FrmRegistrarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CapaPresentación\FrmRegistrarVenta.Designer.cs">
       <DependentUpon>FrmRegistrarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaPresentación\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CapaPresentación\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm.cs">
       <SubType>Form</SubType>
@@ -124,6 +147,9 @@
     <EmbeddedResource Include="CapaPresentación\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentación\FrmCambiarClave.resx">
+      <DependentUpon>FrmCambiarClave.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentación\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,8 +162,14 @@
     <EmbeddedResource Include="CapaPresentación\FrmClienteBase.resx">
       <DependentUpon>FrmClienteBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentación\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CapaPresentación\FrmRegistrarVenta.resx">
       <DependentUpon>FrmRegistrarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CapaPresentación\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm.resx">
       <DependentUpon>Frm.cs</DependentUpon>
@@ -156,6 +188,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -172,6 +205,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Recursos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_userpassword_9564.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

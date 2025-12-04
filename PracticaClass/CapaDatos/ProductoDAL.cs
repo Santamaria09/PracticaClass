@@ -41,7 +41,7 @@ namespace PracticaClass.CapaDatos
             DataTable Tabla = new DataTable();
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = @"Select p.Id, p.Nombre, p.Precio, p.Stock, c.Categoria As Categoria FROM Producto p INNER JOIN Categoria c ON p.Id_Categoria =c.Id WHERE p.Estado = 1;";
+                string sql = @"Select p.Id, p.Nombre, p.Precio, p.Stock, c.Nombre As Categoria FROM Producto p INNER JOIN Categoria c ON p.Id_Categoria = c.Id WHERE p.Estado = 1;";
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
                     cn.Open();

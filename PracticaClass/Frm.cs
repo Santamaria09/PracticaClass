@@ -94,5 +94,10 @@ namespace PracticaClass
             var r = VentaDAL.RegistrarVentaTransaccional(venta, detalles);
             MessageBox.Show(r.Mensaje);
         }
+
+        private void Frm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

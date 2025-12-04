@@ -1,4 +1,5 @@
 ﻿using PracticaClass.CapaEntidades;
+using PracticaClass.CapaPresentación;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,8 +69,25 @@ namespace PracticaClass
 
         }
 
-        private void txt1_Load(object sender, EventArgs e)
+        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
+            lblUser.Text = $"Usuario:{SesionActual.UserName} - Rol:{SesionActual.Rol}";
+            switch (SesionActual.Rol)
+            {
+                case "Admin":
+                    // todo habilitado
+                    break;
+                case "Cajero":
+                    btnClientes.Enabled = false;
+                    btnUser.Enabled = false;
+                    break;
+                default:
+                    btnClientes.Enabled = false;
+                    btnUser.Enabled = false;
+                    break;
+
+            }
+
 
         }
 
@@ -82,6 +100,25 @@ namespace PracticaClass
         {
             FrmClientes frm = new FrmClientes();
             frm.Show();
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frm = new FrmUsuarios();
+            frm.Show();
+        }
+
+        private void CambiarClaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCambiarClave frm = new FrmCambiarClave();
+            frm.Show();
+
+
         }
     }
 

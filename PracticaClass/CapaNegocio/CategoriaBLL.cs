@@ -1,4 +1,4 @@
-﻿using PracticaClass.CapaDatos;
+﻿    using PracticaClass.CapaDatos;
 using PracticaClass.CapaEntidades;
 using System;
 using System.Collections.Generic;

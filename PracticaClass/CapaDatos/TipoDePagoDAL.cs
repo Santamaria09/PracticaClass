@@ -13,9 +13,10 @@ namespace PracticaClass.CapaDatos
         public static List<TiposDePago> Listar()
         {
             List<TiposDePago> Lista = new List<TiposDePago>();
+
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
-                string sql = "SELECT * FROM TipoDePago";
+                string sql = "SELECT * FROM TipoPago";
                 using (SqlCommand cmd = new SqlCommand(sql, cn))
                 {
                     cn.Open();

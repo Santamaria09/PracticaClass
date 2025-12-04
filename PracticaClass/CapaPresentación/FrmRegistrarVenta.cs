@@ -1,5 +1,6 @@
 ﻿using PracticaClass.CapaDatos;
 using PracticaClass.CapaEntidades;
+using PracticaClass.CapaNegocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace PracticaClass.CapaPresentación
         private void FrmRegistrarVenta_Load(object sender, EventArgs e)
         {
             //Clientes
-            cboCliente.DataSource = TipoDePagoDAL.Listar();
+            cboCliente.DataSource = ClienteDAL.ListarActivos();
             cboCliente.DisplayMember = "Nombre";
             cboCliente.ValueMember = "Id";
 
@@ -39,21 +40,21 @@ namespace PracticaClass.CapaPresentación
             //Fecha
             dtpFecha.Value = DateTime.Now;
 
-            CargarProductos(String.Empty);
+            CargarProductos(string.Empty);
 
             //Columnas
             ConfigurarTablaDetalle();
 
         }
 
-        private void CargarProductos(String filtro)
+        private void CargarProductos(string filtro)
         {
             var Tabla = ProductoDAL.Listar();
 
             if(!string.IsNullOrWhiteSpace(filtro))
             {
                 var dv = Tabla.DefaultView;
-                dv.RowFilter = $"Nombre LIKE '%{filtro}%";
+                dv.RowFilter = $"Nombre LIKE '%{filtro}%'";
                 dvgProductosB.DataSource = dv;
             }
             else
@@ -79,7 +80,7 @@ namespace PracticaClass.CapaPresentación
 
 
             //Nombre producto
-            dvgDetalle.Columns.Add("NomnreProducto", "Producto");
+            dvgDetalle.Columns.Add("NombreProducto", "Producto");
 
             //Cantidad
             DataGridViewTextBoxColumn colCant = new DataGridViewTextBoxColumn();
@@ -95,8 +96,9 @@ namespace PracticaClass.CapaPresentación
 
             //Sub total
             DataGridViewTextBoxColumn colSub = new DataGridViewTextBoxColumn();
-            colSub.Name = "Sub Total";
+            colSub.Name = "SubTotal";
             colSub.HeaderText = "SubTotal";
+            colSub.ReadOnly = true;
             dvgDetalle.Columns.Add(colSub);
             dvgDetalle.ReadOnly = false;
 
@@ -145,7 +147,7 @@ namespace PracticaClass.CapaPresentación
             DataGridViewRow row = dvgProductosB.SelectedRows[0];
 
             int IdProducto = Convert.ToInt32(row.Cells["Id"].Value);
-            string Nombre = row.Cells["Nombre"].Value.ToString);
+            string Nombre = row.Cells["Nombre"].Value.ToString();
             decimal Precio = Convert.ToDecimal(row.Cells["Precio"].Value);
 
             int Cantidad = 1;
@@ -177,7 +179,7 @@ namespace PracticaClass.CapaPresentación
         {
             if (dvgDetalle.Columns[e.ColumnIndex].Name =="Cantidad")
             {
-                DataGridViewRow row = dvgDetalle.Rows[e.ColumnIndex];
+                DataGridViewRow row = dvgDetalle.Rows[e.RowIndex];
 
                 int Cantidad;
                 bool ok = int.TryParse(row.Cells["Cantidad"].Value?.ToString(), out Cantidad);
@@ -235,10 +237,68 @@ namespace PracticaClass.CapaPresentación
                 {
                     detalles.Add(new DetalleVenta()
                     {
-                       Id_Producto = Convert.ToInt32(row)
-                    }
+                        Id_Producto = Convert.ToInt32(row.Cells["Id_Producto"].Value),
+                        Cantidad = Convert.ToInt32(row.Cells["Cantidad"].Value),
+                        PrecioUnitario = Convert.ToDecimal(row.Cells["PrecioUnitario"].Value),
+                        SubTotal = Convert.ToDecimal(row.Cells["SubTotal"].Value)
+                    });
+                }
+
+                //Validar BLL
+                var validacion = VentaBLL.ValidarVenta(venta, detalles);
+                if (!validacion.Exito)
+                {
+                    MessageBox.Show(validacion.Mensaje, "Error de validacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+
+                }
+
+                //Guardar
+                var resultado = VentaDAL.RegistrarVentaTransaccional(venta, detalles);
+                if (resultado.Exito)
+                {
+                    MessageBox.Show(resultado.Mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarFormulario();
+
+                }
+                else
+                {
+                    MessageBox.Show(resultado.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error inesperado:" + ex.Message);
+            }
+        }
+
+        private decimal ObtenerTotalVenta()
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow row in dvgDetalle.Rows)
+                total += Convert.ToDecimal(row.Cells["SubTotal"].Value);
+
+            return total;
+        }
+
+        private void LimpiarFormulario()
+        {
+            dvgDetalle.Rows.Clear();
+            lblTotal.Text = "Total: $0.00";
+            txtBProducto.Clear();
+            CargarProductos(string.Empty);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+           this.Close();
+        }
+
+        private void btnLimpiarD_Click(object sender, EventArgs e)
+        {
+            dvgDetalle.Rows.Clear();
+            RecalcularTotal();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace PracticaClass.CapaNegocio
 {
     public class VentaDAL
     {
-        public static (bool Exito, String Mensaje) RegistrarVentaTransaccional(Venta venta, List<DetalleVenta> detalles)
+        public static (bool Exito, string Mensaje) RegistrarVentaTransaccional(Venta venta, List<DetalleVenta> detalles)
         {
             using (SqlConnection cn = new SqlConnection(Conexion.Cadena))
             {
@@ -21,16 +21,21 @@ namespace PracticaClass.CapaNegocio
 
                 try
                 {
-                    string sqlVenta = @"INSERT INTO Venta(Fecha, Monto Total, Id_TipoPago, Id_Cliente) Values (@Fecha, @MontoTotal, @Id_TipoPago, @Id_Cliente); SELECT SCOPE_IDENTITY();";
+                    string sqlVenta = @"INSERT INTO Venta(Fecha, MontoTotal, Id_Cliente, Id_TipoPago) Values (@Fecha, @MontoTotal, @Id_Cliente, @Id_TipoPago); SELECT SCOPE_IDENTITY();";
                     using (SqlCommand cmd = new SqlCommand(sqlVenta, cn, tx))
                     {
                         cmd.Parameters.AddWithValue("@Fecha", venta.Fecha);
                         cmd.Parameters.AddWithValue("@MontoTotal", venta.MontoTotal);
-                        cmd.Parameters.AddWithValue("@Id_TipoPago", venta.Id_TipoPago);
                         cmd.Parameters.AddWithValue("@Id_Cliente", venta.Id_Cliente);
+                        cmd.Parameters.AddWithValue("@Id_TipoPago", venta.Id_TipoPago);
+                       
+
+                        //recuperar ID
                         venta.id = Convert.ToInt32(cmd.ExecuteScalar());
                     }
-                    string sqlDetalle = @"INSER INTO DetalleVenta(Cantidad, PrecioUnitario, SubTotal, Id_Venta, Id_PRoducto) VALUES (@Cantidad, @PrecioUnitario, @SubTotal, @Id_Venta, @Id_Producto);";
+
+                    //Insertar detalles
+                    string sqlDetalle = @"INSERT INTO DetalleVenta(Cantidad, PrecioUnitario, SubTotal, Id_Venta, Id_Producto) VALUES (@Cantidad, @PrecioUnitario, @SubTotal, @Id_Venta, @Id_Producto);";
 
                     var acumulador = new Dictionary<int, int>();
 
@@ -51,10 +56,10 @@ namespace PracticaClass.CapaNegocio
                             acumulador[d.Id_Producto] = 0;
                         acumulador[d.Id_Producto] += d.Cantidad;
 
-
                     }
 
-                    string sqlStock = @"UPDATE Producto SET Stock -@Cantidad WHERE Id= @IdProducto AND Stock >= @Cant;";
+                    //Descontar Stock
+                    string sqlStock = @"UPDATE Producto SET Stock = Stock-@Cant WHERE Id= @IdProducto AND Stock >= @Cant;";
 
                     foreach (var item in acumulador)
                     {
@@ -69,6 +74,7 @@ namespace PracticaClass.CapaNegocio
                                 throw new Exception("Stock insuficiente para el Producto ID: " + item.Key);
                         }
                     }
+                    //Confirma Transaccion
                     tx.Commit();
                     return (true, "Venta registrada con exito. ID generado:" + venta.id);
 

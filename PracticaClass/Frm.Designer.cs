@@ -115,6 +115,7 @@
             this.Controls.Add(this.btnStock);
             this.Name = "Frm";
             this.Text = "Frm";
+            this.Load += new System.EventHandler(this.Frm_Load);
             this.ResumeLayout(false);
 
         }
