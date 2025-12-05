@@ -13,5 +13,6 @@ namespace PracticaClass.CapaEntidades
         public decimal MontoTotal { get; set; }
         public int Id_TipoPago { get; set; }
         public int Id_Cliente { get; set; }
+        public int Id_Usuario { get; set; }
     }
 }
